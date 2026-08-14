@@ -55,7 +55,7 @@ management:
 resilience4j:
   circuitbreaker:
     instances:
-      productService:
+      ecomBreaker:
         register-health-indicator: true
         sliding-window-size: 10
         minimum-number-of-calls: 5
