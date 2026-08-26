@@ -1,7 +1,11 @@
 spring:
   application:
     name: gateway-service
-
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8443/realms/ecom-app
 #  cloud:
 #    gateway:
 #      server:
@@ -33,10 +37,8 @@ spring:
 #              uri: http://localhost:8761
 #              predicates:
 #                - Path=/eureka/**
-
 server:
   port: 8080
-
 management:
   endpoints:
     web:
@@ -51,7 +53,6 @@ management:
   tracing:
     sampling:
       probability: 1.0
-
 resilience4j:
   circuitbreaker:
     instances:
